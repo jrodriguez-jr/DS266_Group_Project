@@ -1,0 +1,2 @@
+Post Results Note: first one to return attention weights. Using d_type 256 and d =0.6baseline model. best val acc was  val_accuracy: 0.8215
+

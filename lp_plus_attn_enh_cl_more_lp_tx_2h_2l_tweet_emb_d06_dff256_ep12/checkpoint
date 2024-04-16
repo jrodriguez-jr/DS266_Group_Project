@@ -1,0 +1,2 @@
+model_checkpoint_path: "lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256.12-0.79"
+all_model_checkpoint_paths: "lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256.12-0.79"

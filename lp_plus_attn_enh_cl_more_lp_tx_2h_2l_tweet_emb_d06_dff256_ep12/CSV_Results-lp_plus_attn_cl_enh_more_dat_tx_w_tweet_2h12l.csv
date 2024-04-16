@@ -1,0 +1,13 @@
+loss,accuracy,val_loss,val_accuracy,Epoch,name,data,word_embeddings,num_layers,d_model,num_heads,dff,dropout_rate
+0.7671330571174622,0.532768964767456,0.6196622848510742,0.6968504190444946,1,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.6521885395050049,0.6385928988456726,0.5234226584434509,0.7624672055244446,2,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5924162268638611,0.6867610812187195,0.5034304857254028,0.7493438124656677,3,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5576519966125488,0.7210626006126404,0.5024695992469788,0.7650918364524841,4,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5317199230194092,0.7409137487411499,0.5156238079071045,0.7362204790115356,5,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5211136341094971,0.7470442056655884,0.4582727253437042,0.7992125749588013,6,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.4892083406448364,0.7749233841896057,0.43862345814704895,0.8136482834815979,7,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.48884469270706177,0.7727339267730713,0.42765018343925476,0.8215222954750061,8,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.47072499990463257,0.7811998128890991,0.4459657073020935,0.8110235929489136,9,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.475551575422287,0.7861626148223877,0.43590447306632996,0.8188976645469666,10,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.4558478891849518,0.7943366169929504,0.4665544033050537,0.7952755689620972,11,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.44186946749687195,0.8011969327926636,0.48469576239585876,0.7913385629653931,12,lp_plus_attn_cl_enh_more_dat_tx_w_tweet_2h12l_ep12_d06_dff256,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
