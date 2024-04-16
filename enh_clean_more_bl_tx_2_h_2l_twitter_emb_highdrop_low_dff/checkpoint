@@ -1,0 +1,2 @@
+model_checkpoint_path: "cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff.12-0.80"
+all_model_checkpoint_paths: "cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff.12-0.80"

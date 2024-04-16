@@ -1,0 +1,13 @@
+loss,accuracy,val_loss,val_accuracy,Epoch,name,data,word_embeddings,num_layers,d_model,num_heads,dff,dropout_rate
+0.8427596688270569,0.5116041302680969,0.6514380574226379,0.5892388224601746,1,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.7084109783172607,0.5748065710067749,0.5737612247467041,0.7335957884788513,2,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.6185462474822998,0.6575682163238525,0.4607006013393402,0.8044619560241699,3,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5553612112998962,0.7320099472999573,0.4508763551712036,0.8044619560241699,4,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5311150550842285,0.7431032061576843,0.44039395451545715,0.8110235929489136,5,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5204110741615295,0.7489417791366577,0.4148360788822174,0.8359580039978027,6,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5007724761962891,0.7649978399276733,0.42763790488243103,0.8136482834815979,7,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.49203038215637207,0.7698146104812622,0.41587308049201965,0.834645688533783,8,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.48711976408958435,0.7804700136184692,0.4256049394607544,0.8320209980010986,9,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.49039024114608765,0.7720040678977966,0.43024250864982605,0.8188976645469666,10,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5092563033103943,0.7620785236358643,0.42871779203414917,0.8241469860076904,11,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
+0.5378794074058533,0.740767776966095,0.4624367952346802,0.8005249500274658,12,cl_enh_more_dat_bl_tx_w_tw_embed_2h_2l_20ep_drophigh_low_dff,train_enhanced_cleaned.csv,fast_text_twitter_embeddings.csv,2,100,2,256,0.6
