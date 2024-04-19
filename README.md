@@ -11,7 +11,7 @@ output:
 fontsize: 11pt
 geometry: margin=1in
 ---
-
+![Transformer-Based Classification Model](/Charts/Local_Attention.png)
 \begin{abstract}
 This study explores how different methods of positional encoding and attention strategies affect the classification of disaster-related tweets using a Transformer-based model. We suggest that dynamic, trainable positional encodings and adjustable attention mechanisms will outperform static ones and only focus narrowly, especially in the dynamic realm of social media communication. We also investigate the potential benefits of incorporating pre-trained word embeddings to improve our model's understanding of disaster-specific language. We anticipate this research will contribute to the Natural Language Processing (NLP) field and enhance tools for managing disasters more effectively. We aim to improve the accuracy and speed with which vital information is shared during live disaster events.
 \end{abstract}
