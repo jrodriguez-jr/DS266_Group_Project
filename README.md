@@ -1,25 +1,14 @@
-# DS266_Group_Project
+# Analysis of Positional Encoding and Attention Mechanisms in Disaster-Related Tweet Classification
+Authors: Javier Rodriguez & Edgar Leon
 
----
-title: "Analysis of Positional Encoding and Attention Mechanisms in Disaster-Related Tweet Classification"
-author: "Javier Rodriguez & Edgar Leon"
-output:
-  pdf_document:
-
-    keep_tex: yes
-    latex_engine: xelatex
-fontsize: 11pt
-geometry: margin=1in
----
-![Transformer-Based Classification Model](Charts/LocalAttention.png)
-\begin{abstract}
+## Abstract
 This study explores how different methods of positional encoding and attention strategies affect the classification of disaster-related tweets using a Transformer-based model. We suggest that dynamic, trainable positional encodings and adjustable attention mechanisms will outperform static ones and only focus narrowly, especially in the dynamic realm of social media communication. We also investigate the potential benefits of incorporating pre-trained word embeddings to improve our model's understanding of disaster-specific language. We anticipate this research will contribute to the Natural Language Processing (NLP) field and enhance tools for managing disasters more effectively. We aim to improve the accuracy and speed with which vital information is shared during live disaster events.
 \end{abstract}
 
-\section{Introduction}
+## Introduction
 Social media has become a key source of information during disasters, which calls for refined real-time analysis methods. As a result, progress in natural language processing (NLP) has become crucial. Our research looks into several positional encoding strategies and attention mechanisms in a Transformer-based model, specifically examining tweets about natural disasters. Driven by the desire to better disaster management through social media insights, our study seeks to create a tool that deepens comprehension and acts as a helpful resource in managing disaster responses.
 
-\section{Background}
+## Background
 In disaster management, quickly processing and understanding text from social media can save lives. Natural language processing, or NLP, has become an essential tool for real-time analysis that leads to actionable insights. At the heart of recent NLP advancements are Transformer models, which are highly effective in handling sequential data thanks to their innovative attention mechanisms [1]. These include positional encoding, which is critical for grasping language order, something older models often need to pay attention to.
 
 Current research confirms that positional encoding is vital for recognizing the sequence of words, which is crucial for tasks like machine translation and syntactic parsing. Developing positional encoding from static methods to more complex, adaptable ones marks an essential development in NLP. This progression, along with different approaches to attention, has dramatically improved model performance.
@@ -28,10 +17,10 @@ Additionally, the field has made strides in data augmentation techniques designe
 
 Our study aims to delve deeper into and refine these mechanisms. By integrating learnable positional encodings and adaptive attention mechanisms in a Transformer-based model, we plan to deepen the understanding and boost the effectiveness of NLP in disaster response. Our goal is to set a new standard in the field through detailed analysis and experiments, offering valuable knowledge and resources for academic study and real-world disaster management scenarios.
 
-\section{Methods}
+## Methods
 We developed a transformer-based classification model utilizing neural machine translation (NMT) architectures adapted for text classification using the last hidden state. Utilizing Keras Layers as our framework, we built the standard transformer architecture by integrating each transformer section (Positional Embedding, Base Attention, Feed Forward) through class instantiations (Figure 1).
 
-![Transformer-Based Classification Model](/Users/sic_intel/Documents/DS266GP/Baseline_Transformer.png)
+![Transformer-Based Classification Model](Charts/Baseline_Transformer.png)
 
 After that, we explored updating the model architecture and explored features such as Learnable Positional Encodings, Local Attention, Adaptive Attention Span, Custom Schedule Regularization. We also revisited the combination of Learnable Positional Encodings with an Adaptive Attention Span. After evaluating these enhancements, we chose the best-fitting model and proceeded to fine-tune it using Optuna for hyperparameter optimization. Subsequently, we integrated pre-trained embedding vectors and rigorously assessed the performance improvements over the baseline model (Figure 2).
 
@@ -45,7 +34,7 @@ We improved the dataset by utilizing the tweetnlp package to classify each tweet
 
 For our preprocessing, we enhanced the text by inserting the keyword and location tags, removing all punctuation, converting all text to lowercase, and removing special characters. We used a Keras standard Tokenizer and set the maximum sentence length to 30 Tokens.
 
-\section{Results}
+## Results
 **Initial Evaluation on Raw Data**
 The preliminary assessment of our Transformer-based model, using unprocessed data, yielded a validation loss (val_loss) of 0.5612 and a validation accuracy (val_accuracy) of 0.7806 over ten epochs. Notably, overfitting occurred beyond the seventh epoch. We set the configuration for this initial run with two layers (num_layers = 2), a model dimensionality of 100 (d_model = 100), a feed-forward network dimensionality of 512 (dff = 512), eight attention heads (num_heads = 8), and a dropout rate of 0.3v (Figure 4). The analysis revealed many false positives (FP) and false negatives (FN), with counts of 520 and 450, respectively. Attention analysis on misclassified examples, such as "Blew up those mentions" (a false positive), indicated a disconnect where crucial words did not receive adequate attention, suggesting a potential deficiency in the model's understanding of context.
 
@@ -135,7 +124,7 @@ Using FastText embeddings, trained on a Twitter corpus, gave our models a nuance
 
 However, our study moves the needle by demonstrating that while such embeddings are beneficial, the type of architecture that deploys the embeddings can dramatically impact their effectiveness. Model 2's balanced performance in reducing false positives and negatives emphasizes the value of a model's internal architecture in understanding context—a nuance not fully explored previously.
 
-\section{Discussion}
+## Discussion
 The implications of our findings extend beyond incremental improvements in model metrics; they invite a re-examination of prevailing assumptions in using NLP for disaster response. While the Baseline model demonstrated a slightly higher accuracy than the LPE model, the negligible margin suggests that the quality of input data and the model's ability to generalize, are pivotal to real-world applications.
 
 Our research corroborates the growing consensus that adaptive attention mechanisms contribute to model robustness. The enhanced performance of Model 4, which incorporated learnable positional encodings, suggests that the ability to discern the relevance of different parts of a tweet adaptively is critical in a domain characterized by noisy and informal language.
@@ -150,7 +139,7 @@ However, our study moves the needle by demonstrating that while such embeddings 
 ![LPE Model Performance Using Enhanced Data](/Users/sic_intel/Documents/DS266GP/LPE.png)
 
 
-\section{Conclusion}
+## Conclusion
 In the comparative analysis of our study, we observed that the Baseline model slightly outperformed the Learnable Positional Encoding (LPE) model, achieving a validation accuracy of 84% versus the latter's 82%. Despite the marginal difference, it was notable that the Baseline model demonstrated greater resilience against overfitting. This finding is an essential consideration for model reliability. Nonetheless, based on the insights gleaned from this study, we anticipate that with the introduction of a more extensive and more varied real-time data set, the LPE model could potentially surpass the Baseline model in terms of performance due to its adaptive features.
 
 Moreover, our research supports the notion that incorporating adaptive attention mechanisms and learnable positional encodings can substantially improve performance in specialized tasks such as classifying disaster-related tweets. Notably, Model 4, embedded within our series of experiments, shone through by achieving the highest validation accuracy amongst its peers and demonstrating enhanced overfitting prevention. This finding highlights the transformative impact of Transformer-based architectures enhanced with learnable encodings on applications within disaster response scenarios.
@@ -163,8 +152,7 @@ We completed this project by deploying our model via a web interface and trying 
 
 The findings suggest an avenue for future research to extend these models to a broader array of emergencies, aiming to tailor and calibrate them for real-time application. The goal will be to fine-tune the models' interpretive accuracy and operational readiness, ensuring they are reliable tools for first responders and disaster management professionals in live scenarios. The quest to refine these models is more than an academic pursuit—it is a step towards harnessing the power of machine learning in service of global humanitarian efforts.
 
-\newpage
-\section{References}
+## References
 1. Vaswani, A., et al. (2017). *Attention Is All You Need*. Advances in Neural Information Processing Systems.
 2. Pak, A., & Paroubek, P. (2010). *Twitter as a Corpus for Sentiment Analysis and Opinion Mining*. LREC.
 3. Nguyen, D., & Gravel, R. (2018). *TweetEmo: Development and Validation of a Self-Report Scale for Measuring Emotions on Twitter*. PLoS ONE.
