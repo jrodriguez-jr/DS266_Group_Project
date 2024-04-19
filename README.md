@@ -109,7 +109,7 @@ We selected Model 2 for final evaluation. Model 2 achieved a validation loss of 
 
 ![Comparison of Model Performance](Charts/Model_Comparison.png)
 
-We also found Model 2 to change the position of the embeddings after training by twice as much as the baseline (~0.42 to 0.22). On the left, we see the top changed embeddings after training. Both models affected almost the exact words, but the change was higher for the LPE. Furthermore, the probability of TRUE was, on average, higher than a TRUE classification for the same sentence against the baseline (Figure 13).
+We also found Model 2 to change the position of the embeddings after training by twice as much as the baseline (~0.42 to 0.22). On the left, we see the top changed embeddings after training. Both models affected almost the exact words, but the change was higher for the LPE model. Furthermore, the probability of TRUE was, on average, higher than a TRUE classification for the same sentence against the baseline (Figure 13).
 
 ![Positional Changes of Embeddings](Charts/Positional_Changes.png)
 
