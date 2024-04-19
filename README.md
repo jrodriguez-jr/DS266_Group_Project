@@ -24,11 +24,11 @@ We developed a transformer-based classification model utilizing neural machine t
 
 After that, we explored updating the model architecture and explored features such as Learnable Positional Encodings, Local Attention, Adaptive Attention Span, Custom Schedule Regularization. We also revisited the combination of Learnable Positional Encodings with an Adaptive Attention Span. After evaluating these enhancements, we chose the best-fitting model and proceeded to fine-tune it using Optuna for hyperparameter optimization. Subsequently, we integrated pre-trained embedding vectors and rigorously assessed the performance improvements over the baseline model (Figure 2).
 
-![Sentiment Counts for True and False Disasters](/Users/sic_intel/Documents/DS266GP/DistributionofTweetsandLabels.png)
+![Sentiment Counts for True and False Disasters](Charts/DistributionofTweetsandLabels.png)
 
 The data for this project came from the Kaggle competition NLP Disaster Tweets. Natural Language Processing with Disaster Tweets is a Natural Language Processing (NLP) competition hosted by Kaggle [4]. The goal was to train a model that could correctly predict whether or not a Twitter tweet was about a natural disaster or was using similar language figuratively (Figure 3). The data consisted of keywords, locations, text, and targets, with an equal distribution of positive and negative labels.
 
-![Distribution of Tweets and Labels](/Users/sic_intel/Documents/DS266GP/DistributionofTweetnsandLabels2.png)
+![Distribution of Tweets and Labels](Charts/DistributionofTweetnsandLabels2.png)
 
 We improved the dataset by utilizing the tweetnlp package to classify each tweet. The classifications included the sentiment category, whether it was ironic or not, the topic category, and the tweet's emotional tone [5][6]. We embedded these labels directly into the text to enrich the data.
 
@@ -38,17 +38,17 @@ For our preprocessing, we enhanced the text by inserting the keyword and locatio
 **Initial Evaluation on Raw Data**
 The preliminary assessment of our Transformer-based model, using unprocessed data, yielded a validation loss (val_loss) of 0.5612 and a validation accuracy (val_accuracy) of 0.7806 over ten epochs. Notably, overfitting occurred beyond the seventh epoch. We set the configuration for this initial run with two layers (num_layers = 2), a model dimensionality of 100 (d_model = 100), a feed-forward network dimensionality of 512 (dff = 512), eight attention heads (num_heads = 8), and a dropout rate of 0.3v (Figure 4). The analysis revealed many false positives (FP) and false negatives (FN), with counts of 520 and 450, respectively. Attention analysis on misclassified examples, such as "Blew up those mentions" (a false positive), indicated a disconnect where crucial words did not receive adequate attention, suggesting a potential deficiency in the model's understanding of context.
 
-![Configuration of the Initial Run](/Users/sic_intel/Documents/DS266GP/Head12.png)
+![Configuration of the Initial Run](Charts/Head12.png)
 
 **Embedding Enhancements**
 To address this, we augmented the model with 100-dimensional embeddings from the FastText library, pre-trained on a corpus of Twitter-specific language ("fasttext_english_twitter_100d.vec"). Subsequent training on this enhanced data improved the validation loss to 0.4808 and accuracy to 0.8042—an uplift of 2% (Figure 5).
 
-![Embeddings](/Users/sic_intel/Documents/DS266GP/Embeddings.png)
+![Embeddings](Charts/Embeddings.png)
 
 **Baseline Model Performance with Pre-Trained Twitter Embeddings**
 Further refinements led to integrating the model with FastText embeddings on cleaner, preprocessed input data. The resulting validation metrics showed a loss of 0.4518 and an accuracy of 0.8346. Hyperparameter tuning refined the model structure to two layers (num_layers = 2), with a model size of 100 (d_mode = 100), two attention heads (num_heads = 2), a smaller feed-forward dimensionality of 256 (dff = 256), and an increased dropout rate of 0.6. While the false negatives (FN) at 308 were higher than false positives (FP) at 119, a detailed review indicated that many resulted from initial data mislabeling. Notably, attention visualization demonstrated that the model focused more on disaster-relevant terms (Figure 6). Our next step was to update the model, experimenting with different upgrades. We updated several models with Learnable Positional Encodings, Local Attention, Adaptive Attention, and Custom Regularization.
 
-![Head1](/Users/sic_intel/Documents/DS266GP/Head1.png)
+![Head1](Charts/Head1.png)
 
 **Comparative Evaluation of Models**
 In our investigation of how various positional encoding strategies and attention mechanisms affect disaster-related tweet classification using a Transformer-based approach, we developed advanced versions of the Transformer framework with enhancements optimized for TensorFlow machine learning tasks:
@@ -65,13 +65,13 @@ In our investigation of how various positional encoding strategies and attention
 
 ***Learnable Positional Encodings + Adaptive Attention Span***: By merging trainable positional encodings with an AdaptiveAttentionLayer, this model dynamically fine-tunes attention relative to the sequence length. It maintains a standard Transformer FeedForward network, incorporating dropout for regularization and applying conventional practices like residual connections and layer normalization to ensure stability.
 
-![Training Loss](/Users/sic_intel/Documents/DS266GP/training_loss.png)
+![Training Loss](Charts/training_loss.png)
 
-![Training Accuracy](/Users/sic_intel/Documents/DS266GP/training_accuracy.png)
+![Training Accuracy](Charts/training_accuracy.png)
 
-![Validation Loss](/Users/sic_intel/Documents/DS266GP/validation_loss.png)
+![Validation Loss](Charts/validation_loss.png)
 
-![Validation Accuracy](/Users/sic_intel/Documents/DS266GP/validation_accuracy.png)
+![Validation Accuracy](Charts/validation_accuracy.png)
 
 In the comparative analysis of five different models trained for a classification task:
 
@@ -100,27 +100,27 @@ Moreover, the importance of word order and the context of their position changes
 
 In our research, we used Model 2. We utilized Optuna, a tool that makes it easier to choose the right settings for a model by automating the hunt for the best hyperparameters for our Transformer model. We set up an Optuna study that ran multiple tests. Optuna's algorithm gave us different values for things like how many layers to use, the size of the model, the number of attention heads, the size of the feed-forward network, and the dropout rate. With each set of hyperparameters, it suggested, it created, trained, and tested the Transformer model and recorded the best score for correctly validating data. Once we completed several tests, Optuna showed us the best combination of settings it found during the search.
 
-![Hyperparameter Optimization via Optuna](/Users/sic_intel/Documents/DS266GP/hyp_optimization.png)
+![Hyperparameter Optimization via Optuna](Charts/hyp_optimization.png)
 
 The outcome of this exercise was revealing in terms of model performance. Upon optimizing Model 2 with Optuna, our final epoch metrics showed an increase in validation accuracy from 0.7776 to 0.7907, signaling that the optimized model had a superior ability to generalize when exposed to new data. Additionally, the optimized model indicated a lower validation loss, decreasing from 0.6846 to 0.6165, which suggests that the optimized model's predictions were more closely aligned with the actual values (Figure 11). This loss reduction represents an improved performance of the model. In summary, the optimization of Model 2 resulted in a model that was more precise in terms of accuracy and generated predictions with greater fidelity, as demonstrated by the enhanced metrics post-optimization.
 
 **Learnable Positional Encoding (LPE) Transformer Classifier**
 We selected Model 2 for final evaluation. Model 2 achieved a validation loss of 0.4276 and an accuracy of 0.8215. The accompanying attention score heatmap comparison between the Model 2 and the baseline illustrates the LPE's superior grasp of word positional relationships, as evidenced by its distinctive checkerboard attention pattern. Also, the Model 2 showcased a more balanced performance between false positives (154) and false negatives (200) (Figure 12).
 
-![Comparison of Model Performance](/Users/sic_intel/Documents/DS266GP/Model_Comparison.png)
+![Comparison of Model Performance](Charts/Model_Comparison.png)
 
 We also found Model 2 to change the position of the embeddings after training by twice as much as the baseline (~0.42 to 0.22). On the left, we see the top changed embeddings after training. Both models affected almost the exact words, but the change was higher for the LPE. Furthermore, the probability of TRUE was, on average, higher than a TRUE classification for the same sentence against the baseline (Figure 13).
 
-![Positional Changes of Embeddings](/Users/sic_intel/Documents/DS266GP/Positional_Changes.png)
+![Positional Changes of Embeddings](Charts/Positional_Changes.png)
 
 While the Baseline model demonstrated a slightly higher accuracy than Model 2, the negligible margin suggests that the quality of input data and the model's ability to generalize are pivotal to real-world applications. This observation aligns with the insight that there are diminishing returns in accuracy gains when using increasingly complex models for social media data analysis.
 
-![Head1a](/Users/sic_intel/Documents/DS266GP/Head1a.png)
+![Head1a](Charts/Head1a.png)
 
 Using FastText embeddings, trained on a Twitter corpus, gave our models a nuanced understanding of disaster-related discourse Figure 14 & Figure 15). This highlights the importance of domain-specific embeddings in improving classification tasks on social media platforms.
 
 
-![Head1b](/Users/sic_intel/Documents/DS266GP/Head1b.png)
+![Head1b](Charts/Head1b.png)
 
 However, our study moves the needle by demonstrating that while such embeddings are beneficial, the type of architecture that deploys the embeddings can dramatically impact their effectiveness. Model 2's balanced performance in reducing false positives and negatives emphasizes the value of a model's internal architecture in understanding context—a nuance not fully explored previously.
 
@@ -133,10 +133,10 @@ Using FastText embeddings, trained on a Twitter corpus, provided our models with
 
 However, our study moves the needle by demonstrating that while such embeddings are beneficial, the architecture within which they are deployed can dramatically impact their effectiveness. Model 2's balanced performance in reducing false positives and negatives emphasizes the value of a model's internal architecture in understanding context—a nuance not fully explored (Figure 16 & Figure 17).
 
-![Baseline Model Performance Using Enhanced Data](/Users/sic_intel/Documents/DS266GP/Baseline.png)
+![Baseline Model Performance Using Enhanced Data](Charts/Baseline.png)
 
 
-![LPE Model Performance Using Enhanced Data](/Users/sic_intel/Documents/DS266GP/LPE.png)
+![LPE Model Performance Using Enhanced Data](Charts/LPE.png)
 
 
 ## Conclusion
@@ -144,7 +144,7 @@ In the comparative analysis of our study, we observed that the Baseline model sl
 
 Moreover, our research supports the notion that incorporating adaptive attention mechanisms and learnable positional encodings can substantially improve performance in specialized tasks such as classifying disaster-related tweets. Notably, Model 4, embedded within our series of experiments, shone through by achieving the highest validation accuracy amongst its peers and demonstrating enhanced overfitting prevention. This finding highlights the transformative impact of Transformer-based architectures enhanced with learnable encodings on applications within disaster response scenarios.
 
-![EmergencyGPT Application](/Users/sic_intel/Documents/DS266GP/application.png)
+![EmergencyGPT Application](Charts/application.png)
 
 The study also draws attention to the formidable capabilities of text enhancement methods, including pre-trained embedded vectors and agile transformer models. Impressively, the performance of these methods is on par with that of the large language models in the context of the Kaggle competition. We achieved an accuracy of 84%, which secured us a position within the top 2% of the competition's leaderboard. Remarkably, with model sizes around 7.87 MB, our models are competitive in accuracy and sufficiently lightweight to ensure deployability across a wide range of platforms, demonstrating both efficacy and efficiency.
 
