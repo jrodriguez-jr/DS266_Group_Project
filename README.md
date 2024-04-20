@@ -100,6 +100,10 @@ Moreover, the importance of word order and the context of their position changes
 
 In our research, we used Model 2. We utilized Optuna, a tool that makes it easier to choose the right settings for a model by automating the hunt for the best hyperparameters for our Transformer model. We set up an Optuna study that ran multiple tests. Optuna's algorithm gave us different values for things like how many layers to use, the size of the model, the number of attention heads, the size of the feed-forward network, and the dropout rate. With each set of hyperparameters, it suggested, it created, trained, and tested the Transformer model and recorded the best score for correctly validating data. Once we completed several tests, Optuna showed us the best combination of settings it found during the search.
 
+![Hyperparameter Importance Plot](Charts/hyperparameter_importance.png)
+
+![Optimization History Plot](Charts/newplot.png)
+
 ![Hyperparameter Optimization via Optuna](Charts/hyp_optimization.png)
 
 The outcome of this exercise was revealing in terms of model performance. Upon optimizing Model 2 with Optuna, our final epoch metrics showed an increase in validation accuracy from 0.7776 to 0.7907, signaling that the optimized model had a superior ability to generalize when exposed to new data. Additionally, the optimized model indicated a lower validation loss, decreasing from 0.6846 to 0.6165, which suggests that the optimized model's predictions were more closely aligned with the actual values (Figure 11). This loss reduction represents an improved performance of the model. In summary, the optimization of Model 2 resulted in a model that was more precise in terms of accuracy and generated predictions with greater fidelity, as demonstrated by the enhanced metrics post-optimization.
